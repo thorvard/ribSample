@@ -1,0 +1,73 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/full_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/full_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/email_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/email_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/full_name"
+        app:layout_constraintTop_toBottomOf="@id/full_name"
+        tools:text="@tools:sample/lorem" />
+
+    <TextView
+        android:id="@+id/phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@id/favourite_icon"
+        app:layout_constraintEnd_toStartOf="@id/favourite_icon"
+        app:layout_constraintStart_toStartOf="@id/full_name"
+        app:layout_constraintTop_toBottomOf="@id/email_address"
+        tools:text="@tools:sample/lorem" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/favourite_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="4dp"
+        android:tint="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/phone_number"
+        app:layout_constraintTop_toTopOf="@id/phone_number"
+        app:srcCompat="@drawable/ic_baseline_favorite" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

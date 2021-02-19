@@ -1,0 +1,6 @@
+rootProject.name = "RIBs"
+include ':app'
+include ':storage'
+include ':contacts:container'
+include ':contacts:detail'
+include ':contacts:list'

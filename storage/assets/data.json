@@ -1,0 +1,84 @@
+[
+  {
+    "first": "Akseli",
+    "last": "Toivonen",
+    "email": "akseli.toivonen@example.com",
+    "phone": "03-621-244",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/51.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/men/51.jpg"
+  },
+  {
+    "first": "Oya",
+    "last": "Tahincioğlu",
+    "email": "oya.tahincioglu@example.com",
+    "phone": "(388)-668-7518",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/11.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/women/11.jpg"
+  },
+  {
+    "first": "Luke",
+    "last": "Jackson",
+    "email": "luke.jackson@example.com",
+    "phone": "04-2225-3753",
+    "cell": "0433-483-515",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/24.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/men/24.jpg"
+  },
+  {
+    "first": "Carter",
+    "last": "White",
+    "email": "carter.white@example.com",
+    "phone": "(375)-259-9662",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/27.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/men/27.jpg"
+  },
+  {
+    "first": "Enrique",
+    "last": "Morales",
+    "email": "enrique.morales@example.com",
+    "phone": "901-885-674",
+    "cell": "644-820-453",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/29.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/men/29.jpg"
+  },
+  {
+    "first": "Irene",
+    "last": "Watts",
+    "email": "irene.watts@example.com",
+    "phone": "(128)-212-4632",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/65.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/women/65.jpg"
+  },
+  {
+    "first": "Mia",
+    "last": "Beck",
+    "email": "mia.beck@example.com",
+    "phone": "051-238-8959",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/95.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/women/95.jpg"
+  },
+  {
+    "first": "Vincent",
+    "last": "Walker",
+    "email": "vincent.walker@example.com",
+    "phone": "(972)-447-2221",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/67.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/men/67.jpg"
+  },
+  {
+    "first": "Gustav",
+    "last": "Mortensen",
+    "email": "gustav.mortensen@example.com",
+    "phone": "23716086",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/72.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/men/72.jpg"
+  },
+  {
+    "first": "Sara",
+    "last": "Hubert",
+    "email": "sara.hubert@example.com",
+    "phone": "23716086",
+    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/81.jpg",
+    "imageLarge": "https://randomuser.me/api/portraits/women/81.jpg"
+  }
+]

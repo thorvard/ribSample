@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+}
+
+apply from: "$project.rootDir/gradle/configuration.gradle"
+apply from: "$project.rootDir/gradle/dependencies.gradle"
+
+android {
+    compileSdkVersion androidSdkVersion
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidSdkVersion
+        versionCode appVersionCode
+        versionName appVersionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation libraries.rib_base
+    implementation libraries.mvicore
+    implementation libraries.mvicore_android
+    implementation libraries.mvicore_binder
+
+    implementation project(":contacts:list")
+    implementation project(":contacts:detail")
+    implementation project(':storage')
+
+    testImplementation testingLibraries.junit
+
+    androidTestImplementation androidTestingLibraries.ext_junit
+    androidTestImplementation androidTestingLibraries.espresso_core
+}

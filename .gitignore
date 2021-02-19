@@ -1,0 +1,48 @@
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Crashlytics
+com_crashlytics_export_strings.xml
+crashlytics-build.properties
+
+# Android Studio
+.idea/
+.gradle/
+build/
+*.iml
+captures/
+
+# gitEye (Linux)
+/.project
+
+# Calabash
+.irb-history
+
+# ProGuard generated mapping files
+mapping/
+launch.bat
+
+Gemfile.lock
+
+debug/output\.json
+purchases/output\.json
+beta/output\.json
+release/output\.json
+
+*.pyc
