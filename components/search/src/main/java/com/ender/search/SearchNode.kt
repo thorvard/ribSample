@@ -1,4 +1,4 @@
-package com.ender.ribs.contacts.list
+package com.ender.search
 
 import com.badoo.ribs.clienthelper.connector.Connectable
 import com.badoo.ribs.clienthelper.connector.NodeConnector
@@ -6,15 +6,15 @@ import com.badoo.ribs.core.Node
 import com.badoo.ribs.core.modality.BuildParams
 import com.badoo.ribs.core.plugin.Plugin
 import com.badoo.ribs.core.view.RibView
-import com.ender.ribs.contacts.list.view.ContactsListView
+import com.ender.search.view.SearchView
 
-internal class ContactsListNode(
+internal class SearchNode(
     buildParams: BuildParams<*>,
-    viewFactory: ((RibView) -> ContactsListView?)?,
+    viewFactory: ((RibView) -> SearchView?)?,
     plugins: List<Plugin> = emptyList(),
-    connector: NodeConnector<ContactsList.Input, ContactsList.Output> = NodeConnector()
-) : Node<ContactsListView>(
+    connector: NodeConnector<Nothing, Search.Output> = NodeConnector()
+) : Node<SearchView>(
     buildParams = buildParams,
     viewFactory = viewFactory,
     plugins = plugins
-), ContactsList, Connectable<ContactsList.Input, ContactsList.Output> by connector
+), Search, Connectable<Nothing, Search.Output> by connector

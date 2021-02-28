@@ -3,4 +3,5 @@
     <string name="error_load_contacts">Contacts can\'t be loaded</string>
     <string name="action_retry">Retry</string>
     <string name="error">Error!</string>
+    <string name="search_field_placeholder">Search for contacts</string>
 </resources>

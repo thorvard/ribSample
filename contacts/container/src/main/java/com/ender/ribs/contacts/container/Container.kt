@@ -1,5 +1,6 @@
 package com.ender.ribs.contacts.container
 
+import android.content.Context
 import com.badoo.ribs.core.Rib
 import com.badoo.ribs.core.customisation.RibCustomisation
 import com.ender.ribs.contacts.container.view.ContainerAndroidView
@@ -10,6 +11,7 @@ interface Container : Rib {
 
     interface Dependency {
         val localStorage: LocalStorage
+        val context: Context
     }
 
     class Customisation(

@@ -1,5 +1,6 @@
 package com.ender.ribs
 
+import android.content.Context
 import android.os.Bundle
 import android.view.ViewGroup
 import com.badoo.ribs.android.RibActivity
@@ -24,6 +25,7 @@ class MainActivity : RibActivity() {
         ContainerBuilder(
             object : Container.Dependency {
                 override val localStorage: LocalStorage = LocalStorageFactory.localStorage
+                override val context: Context = this@MainActivity
             }
         ).build(root(savedInstanceState))
 }

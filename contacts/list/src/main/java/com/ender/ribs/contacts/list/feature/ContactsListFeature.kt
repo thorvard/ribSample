@@ -10,6 +10,7 @@ import com.ender.ribs.contacts.list.model.Contact
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 internal class ContactsListFeature(
     contactsRepository: ContactsRepository
@@ -29,6 +30,7 @@ internal class ContactsListFeature(
 
     sealed class Wish {
         object LoadContacts : Wish()
+        data class SearchContact(val keyword: String) : Wish()
         data class FavouriteContact(val emailAddress: String) : Wish()
         data class UnFavouriteContact(val emailAddress: String) : Wish()
     }
@@ -56,6 +58,10 @@ internal class ContactsListFeature(
             when (action) {
                 is Action.Launch -> when (action.wish) {
                     is Wish.LoadContacts -> loadContacts()
+                    is Wish.SearchContact -> {
+                        if (action.wish.keyword.isEmpty()) clearSearch()
+                        else searchContacts(action.wish.keyword)
+                    }
                     is Wish.FavouriteContact -> toggleContactFavouriteStatus(action.wish.emailAddress)
                     is Wish.UnFavouriteContact -> toggleContactFavouriteStatus(action.wish.emailAddress)
                 }
@@ -69,6 +75,17 @@ internal class ContactsListFeature(
                 .cast(Effect::class.java)
                 .startWith(Effect.Loading)
                 .onErrorReturn { Effect.ErrorOnContactLoad(it) }
+
+        private fun searchContacts(keyword: String): Observable<Effect> =
+            contactsRepository.searchContacts(keyword)
+                .toObservable<Effect>()
+                .debounce(500, TimeUnit.MILLISECONDS)
+                .startWith(Effect.Loading)
+
+        private fun clearSearch(): Observable<Effect> =
+            contactsRepository.clearSearch()
+                .toObservable<Effect>()
+                .startWith(Effect.Loading)
 
         private fun toggleContactFavouriteStatus(emailAddress: String): Observable<Effect> =
             contactsRepository.toggleContactFavouriteStatus(emailAddress)

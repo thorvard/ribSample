@@ -6,18 +6,18 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.badoo.ribs.core.Node
 import com.badoo.ribs.core.view.AndroidRibView
 import com.badoo.ribs.core.view.RibView
 import com.badoo.ribs.core.view.ViewFactory
-import com.ender.ribs.contacts.list.model.Contact
 import com.ender.ribs.contacts.list.R
 import com.ender.ribs.contacts.list.databinding.ContactListViewBinding
+import com.ender.ribs.contacts.list.model.Contact
 import com.ender.ribs.contacts.list.view.ContactsListView.Event
 import com.ender.ribs.contacts.list.view.ContactsListView.ViewModel
 import com.jakewharton.rxrelay2.PublishRelay
 import io.reactivex.ObservableSource
 import io.reactivex.functions.Consumer
-
 
 interface ContactsListView : RibView, ObservableSource<Event>, Consumer<ViewModel> {
 
@@ -49,6 +49,9 @@ internal class ContactsListAndroidView(
     init {
         setUpContactsList()
     }
+
+    override fun getParentViewForChild(subtreeOf: Node<*>): ViewGroup =
+        binding.searchContainer
 
     override fun accept(viewModel: ViewModel) {
         binding.progressIndicator.visibility = if (viewModel.loading) View.VISIBLE else View.GONE
